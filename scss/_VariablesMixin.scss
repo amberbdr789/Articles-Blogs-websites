@@ -1,0 +1,115 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+$colorBright1:#f35e98;
+$colorBright2:#fcc91d;
+$colorBright3:#3f98bb;
+$colorBright4:#72cff5;
+$colorBright5:#8ddaf5;
+$colorBright6:#29458a;
+$colorBright61:#fff;
+$colorBright7:rgba(0,0,0,.8);
+$colorBright8:#add8e6;
+$colorBright9:rgba(0,0,0,.3);
+$colorBright10:rgba(0,0,0,1);
+
+
+/*page 3 color*/
+$colorBright11:#fcc91d;
+$colorBright12:rgb(231,111,81);
+$colorBright13:rgba(0,0,0,.2);
+$colorBright14:rgba(0,0,0,.8);
+
+$font-size1:1rem;
+$font-size2:1.5rem;
+$font-size3:2.5rem;
+$font-size4:3rem;
+
+
+$font-weight1:400;
+$font-weight2:600;
+$font-weight3:800;
+$box-shadow:4px 4px 4px $colorBright7;
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin flexBox {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+@mixin positionAbsolute {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;     
+    height: 100%;
+    width: 100%; 
+    background-repeat: no-repeat;
+    background-size:cover;       
+    z-index:-3;
+}
+
+@mixin positionAbsolute2 {        
+    font-size:$font-size1;       
+    z-index:1; 
+}
+
+ @mixin backgroundImage{
+    @include positionAbsolute;  
+    background-size:100% auto;    
+}
+
+@mixin iconsHeading  {
+    .material-icons {
+        color:$colorBright6;
+        font-size:$font-size1;
+        margin:1rem;
+    }
+    h4 {  
+        font-size:$font-size2;
+        margin:0 0 .5rem 0;     
+  
+        a {
+            color:$colorBright6;
+            text-decoration:none;
+            text-align:center;
+        }
+    }
+}
+
+@mixin  imageSize {
+    width:100%;
+    height:auto; 
+}
+
+@mixin footerIcon {
+    .footerIconsSocial {   
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        a {
+            margin:1rem;
+            text-decoration: none;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:$colorBright61;
+            background-color:$colorBright9;
+        }        
+    }
+}

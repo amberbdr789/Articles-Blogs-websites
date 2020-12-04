@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/prism.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Poppins&family=Rubik:wght@300&display=swap" rel="stylesheet">
+ 
+</head>
+<!--Need to update code for css animations-->
+<body>   
+    <div id="progress"></div>
+    <!--header starts-->
+    <header class="headerCsssTricks"> 
+        <img class="headerCsssTricks__imgHeader" src="img/programmingW.svg" alt="">
+        <div class="headerCsssTricks__profile">
+            <div class="imgBoxShadow">
+                <img class="imgProfile" src="img/profile.jpg" alt="">
+            </div>
+            <div class="profile__topicDate">
+                <div class="amberWrote">Amber Bdr <span>Wrote</span></div>
+                <h2>Top 10 CSS tricks you should know</h2>
+                <div class="dateRead">
+                    <span class="date">20th November 2020 | </span>
+                    <span class="read">1 hour read</span>                    
+                </div>
+                <div class="metaTags">
+                    Reminding some of the quick methods in any field has always been profit in learning.
+                    It enhance our skills in that field and speed our work flow. Here i have discuss some of the mostly/popular must know tricks used in css.
+                </div>
+            </div>
+        </div>
+        <h3 class="headerCsssTricks__heading">  
+            <span class="button">#Web development</span>
+            <span class="button">#CSS</span>
+            <span class="button">#Beautify CSS</span>
+        </h3>
+        <h3>
+            <a class="homePage" href="mainPage.html">&#8619 Back to home page</a>
+        </h3>
+    </header>   
+    
+    <article class="cssTricks">
+        <!------Clip-path, tricks 1------>
+        <div class="clip__path cssConcepts">
+            <h3 class="headingTopic">clip-path</h3>        
+            <p class="cssConcepts__introduction">                
+                The <mark class="highlight">clip-path</mark>
+                in <span class="colorAnother">CSS</span> displays only the clipped region.
+                It clips the layouts to <span class="importantHighlight">basics shapes</span>like star, traingle, arrow, frame, circle and many more. Area that are outside the clipped region are hidden.The <span class="syntextHighlight">clip</span> in css is depreciated.one of the most common use is on <mark class="highlight">image</mark>. If i want to show and hide certain  part of image, this <span class="syntextHighlight">clip-path</span>is best method to use.
+                <a class="moreInfoTricks" href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path" target="_blank">
+                  Check here for more details about "clip-path".
+                </a>          
+            </p>             
+            <img class="imgcssConcepts" src="img/shapesc.svg" alt=""> 
+              
+            <div class="cssConcepts__details">
+                <h3 class="headingTopic">formal definition</h3>
+                <div>
+                    <h4>Default Value</h4>
+                    <mark class="highlight">None</mark>
+                    <h4>Applies to</h4>
+                    <p>All elements; In SVG, it applies to container elements excluding the
+                        <mark class="highlight"></mark>defs</span>elements and all graphics element and all graphics elements.</p>
+                    <h4>Inherited</h4>
+                    <p>No</p>        
+                    <h4>Animation type</h4>
+                    <p>
+                        Yes, as specified for <mark class="highlight">basics-shapes</mark> otherwise no
+                    </p>
+                </div>
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <pre>
+                    <code class="language-html">  
+                        &lt;!-- clip-path example--&gt;
+                        &lt;div class="tricks1">
+                            &lt;div class="shapes rabbet"&gt;&lt;/div&gt;
+                            &lt;div class="shapes leftArrow"&gt;&lt;/div&gt;                     
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        html, body {
+                            width:100%;
+                            height:100%;     
+                        }                        
+                        * {
+                            box-sizing:border-box;
+                        }
+                        .tricks1 {
+                            padding:5vh;
+                            background:linear-gradient(to right,
+                            #780206, #061161);
+                            width:100%;
+                            height:auto;        
+                        }
+                        .shapes {
+                            height:100px;
+                            width:100px;
+                            margin-top:2rem; 
+                            margin:auto;    
+                        }
+                        .rabbet {
+                            margin-top:2rem;
+                            /*"https://www.cssportal
+                            .com/css-clip-path-generator/"*/
+                            -webkit-clip-path: polygon(0% 15%, 15% 15%,
+                             15% 0%, 85% 0%, 85% 15%, 
+                             100% 15%, 100% 85%, 85% 85%,
+                             85% 100%, 15% 100%, 15% 85%, 0% 85%);
+                            clip-path: polygon(0% 15%, 15% 15%,
+                             15% 0%, 85% 0%, 85% 15%, 100% 15%,
+                             100% 85%, 85% 85%, 85% 100%, 15%
+                             100%, 15% 85%, 0% 85%);
+                             background-color:#a7414a;
+                        }
+                        .leftArrow {
+                            margin-top:2rem;
+                            -webkit-clip-path: polygon(75% 0%, 100% 50%,
+                             75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                            clip-path: polygon(75% 0%, 100% 50%,
+                            75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                            background-color:#282726;
+                        }  
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/KKMJKeN">
+                <span class="material-icons">fact_check</span>
+                click here to see the output               
+            </a>           
+            <div class="cssConcepts__browserSuport">                           
+                <a class="browserComp" href="https://caniuse.com/css-clip-path" target="_blank">
+                    <span class="material-icons">verified</span> 
+                    Note :Check Brower compatability Before using.
+                </a>
+                 
+                <a class="differentGenerator" href="https://www.cssportaal.com/css-clip-path-generator/">
+                    <span class="material-icons">dashboard</span>
+                    check here for different shapes generator.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+        <!--tricks 2 -->
+        <div class="css__gradients cssConcepts">
+            <h3 class="headingTopic">css Gradients</h3>        
+            <p class="cssConcepts__introduction">                
+                The <mark class="highlight">CSS Gradients</mark>
+                is all about mixing different colors and
+                <a  class="moreInfoTricks" href="https://css-tricks.com/">create imaginative colors </a> in websites.Here in this example i have apply <span class="importantHighlight">CSS Gradients</span> in <b>text</b>. Just as you declare the  <mark class="highlight">Background</mark>
+                of an element to be a solid color in CSS, you can also declare that <mark class="highlight">Background</mark>
+                to be as <mark class="highlight">Gradients</mark> We can generate new color mixture with the help of css gradients also.We mainly have two types of gradients.<span class="importantHighlight">Linear-Gradients and Radial Gradients. </span>Both Radials and Linear gradients can be repeating color mixture. To create linear gradients you must include atleast mention two <span class="importantHighlight">color stops</span>.
+                <a class="moreInfoTricks" href="https://css-tricks.com/css3-gradients/" target="_blank">
+                Check here for more details about <b>CSS-Gradients</b>.               
+                </a>   
+            </p>
+            <div class="imgcssConcepts" id="imgGradients">
+                <div class="gradients firstTop"></div>
+                <div class="gradients secondMiddle"></div>
+                <div class="gradients ThirdEnd"></div>
+            </div>    
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Syntext</h4>
+                    <code>
+                        Background-image/Background:linear-gradient(direction, color1, color2, ....).
+                        <br><br>
+                        Background-image/Background:repeating-linear-gradient(direction, color1, color2, ....).                        
+                        <br><br>
+                        Background-image/Background:radial-gradient(direction, color1, color2, ....). 
+                        <br><br>               
+                        Background-image/Background:repeating-radial-gradient(direction, color1, color2, ....).                       
+                        <br>
+                    </code>
+                    <h4>Applies to</h4>
+                    <p>All elements;</p>
+                    <h4>Inherited</h4>
+                    <p>Yes</p>        
+                    <h4>Animation type</h4>
+                    <p>
+                        yes. But direct animation is <mark class="highlight">not possible.</mark>
+                    </p>
+
+                </div> 
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <pre>
+                    <code class="language-html">  
+                        &lt;div class="gradientText"&gt;
+                            Boom!!! Gradient text.
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">
+                        .gradientText {  
+                          /*first sould be always "background",
+                          then other syntext follows,*/
+                          font-size:4rem; 
+                          padding:1rem;
+                          background:#264653;
+                          font-family: 'Dosis', sans-serif;
+                          border-left:10px inset #ef6f51;
+                          background:linear-gradient(45deg, #e9c46a,
+                          #e76f51);
+                          -webkit-text-fill-color:transparent;
+                          -webkit-background-clip:text;    
+                          text-align:center;
+                      }
+                    </code>
+                </pre>                         
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/LYZqENv">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <span class="material-icons">verified</span>            
+                <a href="https://caniuse.com/css-gradients" target="_blank">
+                    Note :Check Brower compatability Before using.
+                </a>
+                <a href="https://uigradients.com/#Cherryblossoms">
+                    <span class="material-icons">dashboard</span>
+                    Awesome gradient generators.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+
+        <!--tricks 3, -->
+        <div class="google__fonts cssConcepts">
+            <h3 class="headingTopic">Google fonts</h3>        
+            <p class="cssConcepts__introduction">                
+                <mark class="highlight">Google Fonts</mark>
+                is created and maintained by<span class="colorAnother">Google</span>.This is another way to improve 
+                design in any articles.It improves the design of the text. There are over <span class="importantHighlight">1017 as of 2020</span> different font families but not all of them are variavle. But i suggest you to use only 
+                <i>Variable fonts.</i>There are lot of handsome and adorable<mark class="highlight">Google Fonts</mark> that we can use.some popular google fonts are: Oswald,Roboto Mono,Raleway,Roboto Slab,Playfair Display Lora,Wors Sans,Rubik,Quicksand,Heebo.
+                <br> <br>
+                <a class="moreInfoTricks" href="https://fonts.google.com/" target="_blank">Google fonts</a> used as a <span class="importantHighlight">Heading:Exo 2, Catamaran,Merriweather Sans
+                    Assistant,Domine,Exo,Signika,Maven Pro,Orbitron,Cinzel......  
+                </span>              
+            </p>  
+            <img class="imgcssConcepts" src="img/handwriting.svg" alt="">
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Mention link</h4>
+                    <mark>
+                        <link rel="preconnect" href="https://fonts.gstatic.com">
+                        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+                    </mark>
+                    <h4>Applies to</h4>
+                    <p>All elements; 
+                    <h4>Inherited</h4>
+                    <p>yes</p>        
+                    <h4>Categories</h4>
+                    <p>
+                        variables,Different languages, Font properties(thickness, slant, width, Number of styles).
+                    </p>
+                </div> 
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <!----need to update html code of google fonts.----->
+                <pre>
+                    <code class="language-html">  
+                        &lt;div class="googleFontsHead"&gt;
+                            &lt;h1&gt;I love Google Fonts&lt;/h1&gt;
+                            &lt;hr  class="horizontal__line"&gt;
+                            &lt;div id="visitEnd"&gt;
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                                mountains bring hope for adventures.
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        * {
+                            box-sizing:border-box;
+                        }
+                        html, body {
+                            height:100%;
+                            width:100%;
+                        }
+                        h1 {
+                            font-family: 'Roboto Mono', monospace;    
+                            color: #264653;
+                            text-align: center;
+                            padding:1rem;
+                            margin-bottom: .5rem; 
+                            padding-bottom:0;  
+                            font-size:2rem;
+                            font-weight:900;   
+                        }
+                        #visitEnd {
+                            padding:2rem;
+                            font-family: 'Changa', sans-serif;
+                            background-color:#264653;
+                            color: #e9c46a;
+                            text-align:justify;
+                            text-justify: inter-word; 
+                            border-left:5px inset #e76751;  
+                            max-width:1200px;
+                            margin:auto;
+                        }
+                        .horizontal__line {
+                            padding-top:0;
+                            margin-top:0;
+                            height:5px;
+                            background-color:#264653;
+                            width: 20%;
+                            text-align: center; 
+                            margin-bottom:2rem;
+                        }
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/KKMJKeN">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <span class="material-icons">verified</span>            
+                <a href="https://caniuse.com/css-backgroundblendmode" target="_blank">
+                    Note :Check Brower compatability Before using.
+                </a>            
+                 
+                <a href="https://www.typewolf.com/">
+                    <span class="material-icons">dashboard</span>
+                    check here for different font combinations.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+                
+        <!------Tricks 4, ------>
+        <div class="background__blend cssConcepts">
+            <h3 class="headingTopic">Background Blend Mode</h3>        
+            <p class="cssConcepts__introduction">                
+                The <mark class="highlight">Background Blend Mode</mark>
+                in <span class="colorAnother">CSS</span> can be defined as <i>interaction
+                    of an elements background-color with elements`s 
+                    background-image to get background color 
+                    effects</i>. It adds the <b>background color</b> effects to <b>image.</b> 
+                </i>
+              <a class="moreInfoTricks" href="https://www.w3schools.com/cssref/pr_background-blend-mode.asp" target="_blank">Check here for more details about "google-fonts".</a>               
+            </p>   
+            <img class="imgcssConcepts" src="img/backColor.jpg" alt=""> 
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Default Value</h4>
+                    <mark class="highlight">Normal</mark>
+                    <h4>Applies to</h4>
+                    <p>All elements; In SVG, it applies to container elements excluding the
+                        <mark class="highlight"></mark>defs</span>elements and all graphics
+                        element and all graphics elements.
+                    </p>
+                    <h4>Inherited</h4>
+                    <p>No</p>        
+                    <h4>Javascript syntext</h4>
+                    <p>
+                        <span class="syntextHighlight">
+                            object.style.backgroundBlendMode = "screen"
+                        </span>
+                    </p>
+                    <h4>CSS syntext</h4>
+                    <p class="syntextHighlight">
+                        background-blend-mode:normal|multiply|
+                        screen|overlay|darken|
+                        lighten|color-dodge|saturation|color|luminosiy;
+                    </p>
+                </div>  
+            </div>                   
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1>  
+                <!--update html code-->              
+                <pre>
+                    <code class="language-html">  
+                        &lt;p class="blendmodeTricks8"&gt;
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.                
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.                
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.                
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.                
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.                
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.                
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        &lt;/p&gt;                        
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        html, body {
+                            width:100%;
+                            height:100%;  
+                            scroll-behavior: smooth;                             
+                        }
+                        * {
+                            box-sizing: border-box;
+                        }
+                        .blendmodeTricks8 {
+                            height:100%;
+                            width:100%;
+                            background-image: url("img/bubbleBackground.jpg");
+                            background-color:#123456;
+                            background-blend-mode:luminosity;
+                            background-size: cover;
+                            color:white;
+                        }
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/ExyraGB">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <span class="material-icons">verified</span>            
+                <a href="https://caniuse.com/css-backgroundblendmode" target="_blank">
+                    Note :Check Brower compatability Before using.
+                </a>            
+                 
+                <a href="https://cssduotone.com/">
+                    <span class="material-icons">dashboard</span>
+                    check here for different shapes generator.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal"> 
+
+        <!--tricks 5, single page navigation-->
+        <div class="page__navigation cssConcepts">
+            <h3 class="headingTopic">single Page Navigation</h3>        
+            <p class="cssConcepts__introduction">                
+                we can travel travel from one webpage to another webpage with the help of
+                 <a href="https://www.w3schools.com/html/html_links.asp">
+                    <span class="importantHighlight">html links.</span>
+                 </a>
+                But is it possible to  <i>jump to particular section within webpages.</i>
+                When we have long single web page, <mark class="highlight">scrolling</mark>
+                takes a lot of time. But we have a method in  <span class="randomHighlight">html</span> to
+                just to a specifice part of web page by using <span class="randomHighlight">id selector and link.</span>
+                add the following syntext for smooth and slow page navigation.        
+            </p>  
+            <img class="imgcssConcepts" src="img/linksHtml.svg" alt="">
+
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Default Value</h4>
+                    <mark class="highlight">None</mark>
+                    <h4>Applies to</h4>
+                    <p>All elements; In SVG, it applies to container elements excluding the
+                        <mark class="highlight"></mark>defs</span>elements and all graphics
+                        element and all graphics elements.
+                    </p>
+                    <h4>Inherited</h4>
+                    <p>No</p>
+                    <h4>CSS syntext</h4>                    
+                </div>  
+            </div>        
+            
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <!------need to umdate html code for single page navigations------>
+                <pre>
+                    <code class="language-html">  
+                        &lt;a class="links" href="#bottom">&#8595; &nbsp;To Bottom&lt;/a&gt;  
+                        &lt;div id="visitEnd" id="top" style="text-align: center;"&gt;
+                            &lt;pre&gt;
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            .
+                            .
+                            .
+                            Lorem ipsum dolor sit amet.
+                            &lt;/pre&gt;
+                        &lt;/div&gt;   
+                        &lt;a class="links" id="bottom" href="#top">&#8593; &nbsp;To Topl&lt;/a&gt; 
+                    </code>
+                </pre>
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        * {
+                            box-sizing:border-box;
+                        }
+                        html, body {
+                            height:100%;
+                            width:100%;
+                        }
+                        h1 {
+                            font-family: 'Roboto Mono', monospace;    
+                            color: #264653;
+                            text-align: center;
+                            padding:1rem;
+                            margin-bottom: .5rem; 
+                            padding-bottom:0;  
+                            font-size:2rem;
+                            font-weight:900;   
+                        }
+                        #visitEnd {
+                            padding:2rem;
+                            font-family: 'Changa', sans-serif;
+                            background-color:#264653;
+                            color: #e9c46a;
+                            text-align:justify;
+                            text-justify: inter-word; 
+                            border-left:5px inset #e76751;  
+                            max-width:1200px;
+                            margin:auto;
+                        }
+                        .horizontal__line {
+                            padding-top:0;
+                            margin-top:0;
+                            height:5px;
+                            background-color:#264653;
+                            width: 20%;
+                            text-align: center; 
+                            margin-bottom:2rem;
+                        }
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/YzWBPKo">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                            
+                <a href="https://css-tricks.com/almanac/selectors/i/id/" target="_blank">
+                    <span class="material-icons">verified</span>learn #d from best resoures.                    
+                </a>       
+                 
+                <a href="https://material.io/">
+                    <span class="material-icons">dashboard</span>
+                    Bonus part.Popular icons for any design.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+
+        <!-----tricks 6, CSS animation------>
+        <div class="css__animations cssConcepts">
+            <h3 class="headingTopic"> css animations</h3>        
+            <p class="cssConcepts__introduction">                
+                The <mark class="highlight">CSS animations</mark>
+                is one main factor that make our website look amazing and make client jawless. We can animate
+                in css without using,<span class="importantHighlight">Javascript,Zurb,jQuery and Flash.</span> 
+                But why should we use css animation for simple taks? because it`s easy to write <span class="importantHighlight">syntext</span> and solve the problems.
+                CSS animation allow to change the Style from one state to another slowly bring nice effects.
+                The code that are specified inside<code class="codeHighlighter">@keyframes</code> will gradually change from current style to new style with mentioned time. To work animation, bind an element with animation. 
+                <br>
+                <br>
+                The <code>animation-duration</code> property defines total time required to complete animation.
+                no animation will take place if we don`t mention <code>animation-duration</code>, as default value is 
+                0s.
+              <a class="moreInfoTricks" href="https://css-tricks.com/almanac/properties/a/animation/" target="_blank">
+                Check here for more details about "CSS-Animation".</a>              
+            </p>         
+               
+            <div class="cssConcepts__details">
+                <h3 class="animation__text">formal definition</h3>
+                <div>
+                    <h4>Default</h4>
+                    <mark class="highlight">None</mark>                  
+                    <h4>Inherited</h4>
+                    <p>No</p>        
+                    <h4>Must syntext</h4>
+                    <p>
+                        Animation name and animation-duration.
+                    </p>
+                </div>
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <pre>
+                    <code class="language-html">  
+                        &lt;div class="tricks9"&gt;
+                            &lt;div class="animationcssTricks"&gt;
+                                &lt;div class="UpdownUp"&gt;&lt;div&gt;
+                            &lt;div&gt;
+                        &lt;div&gt;
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        .tricks9 {
+                            background:linear-gradient(45deg, #5f2c82, #49a09d);
+                            width:100%;
+                            height:100%;
+                            display:flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-left:10px solid black;
+                        }
+                        .animationcssTricks {    
+                            position: relative;
+                            border-radius:50%;
+                            display:flex;
+                            justify-content: center;
+                            align-items: center;
+                            height:200px;
+                            width:200px;
+                            background:linear-gradient(to right, #e9c46a,
+                                #e9c46a, #f4a261, #e76f51);
+                                animation:rotates 1s infinite;   
+                        }
+                        .UpdownUp {
+                            border-radius:50%;
+                            background:rgba(255,255,255,.9);
+                            width:170px;
+                            height:170px;
+                        }
+                        @keyframes rotates { 
+                            from {
+                                transform:rotate(0deg);
+                            }
+                            to {
+                                transform:rotate(360deg);
+                            }    
+                        }
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/XWKOJoQ">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <span class="material-icons">verified</span>            
+                <a href="https://caniuse.com/css-clip-path" target="_blank">
+                    Note :Check Brower compatability Before using.
+                </a>            
+                 
+                <a href="https://animate.style/">
+                    <span class="material-icons">dashboard</span>
+                    check here for different animation style.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+
+        <!------ tricks 7, Pseudo------>
+        <div class="css__pseudo cssConcepts">
+            <h3>First letter of the word</h3>        
+            <p class="cssConcepts__introduction">                
+                It`s Breathtaking to see that there is rapid development in technology, so in the <span class="randomHighlight">web development.</span> Each year a lot of 
+                new features or updates are introduced in every field. Now in css also, a lot of new features are being introduced.
+                Sometimes when we want to give <mark class="highlight">CSS properties</mark> only to <span class="importantHighlight">first letter</span> of the word. we have simple method in css by using <span class="highlight">pseudo.</span> for examle, we can give extra large font-size, color, background-color and etc to first letter or first  word of the mentioned <span class="randomHighlight">html elements.</span>       
+              <a class="moreInfoTricks" href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">
+                Check here for more details about "pseudo".</a>              
+            </p>    
+            <img class="imgcssConcepts" src="img/bookWriting.svg" alt="">
+           
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Default value</h4>
+                    <mark class="highlight">None</mark>                   
+                    <h4>Inherited</h4>
+                    <p>No</p>        
+                    <h4>Animation type</h4>
+                    <p>
+                        Yes.
+                    </p>
+                </div> 
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <pre>
+                    <code class="language-html">  
+                        &lt;div class="tricks4"&gt;
+                            &lt;div class="pseudo firstSentence">Lorem ipsum
+                            dolor sit amet consectetur adipisicing elit. Hic, sit?
+                            &lt/div&gt;
+                            &lt;div class="pseudo firstLetter">first Letter&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        html, body {
+                            width:100%;
+                            height:100%;  
+                            scroll-behavior: smooth; 
+                            background:linear-gradient(to right, #fbd3e9, #bb377d);
+                            
+                        }
+                        .pseudo {
+                            font-family: 'Raleway', sans-serif;
+                            height:100px;
+                            width:200px;
+                            margin:1rem auto;
+                            padding:1rem;
+                            border:5px double #e76f51;
+                            border-radius:.3rem;                         
+                        }
+                        .firstSentence::first-line {
+                            background: #264653;    
+                            color:white;
+                        }                        
+                        .firstLetter {
+                            background-color:#2a9d8f;
+                        }                        
+                        .firstLetter::first-letter {
+                            font-size: 3rem;
+                        }
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/VwjgwJN">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <span class="material-icons">verified</span>            
+                <a href="https://caniuse.com/css-default-pseudo" target="_blank">
+                    Note :Check Brower compatability Before using.
+                </a>            
+                 
+                <a href="https://www.smashingmagazine.com/">
+                    <span class="material-icons">dashboard</span>
+                    check the top website for css articles
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+
+        <!--tricks 8, -->
+        <div class="horizontalAlign cssConcepts">
+            <h3 class="headingTopic">Margin:auto</h3>        
+            <p class="cssConcepts__introduction">                
+                There comes  a time when we have to align html content horizontally and vertically. We can use Position, Margin:auto,CSS flexbox,CSS Grid.
+                we can easily horizontal center the text using <code>text-align:center; </code>But layouts cannot be centered using text-align:center. So one of the easiest way for horizontal centering is by using <code>margin:auto. </code>The items/layouts can be placed in the left, right side of the container with the help of margin.  
+                <br>
+                <br>
+                The most common method used to center items/layouts horizontally are <mark class="highlight">margin</mark> and <mark class="highlight">css flexbox.</mark> And all bowser supports margin. In <span class="colorAnother">CSS</span> displays only the clipped region.
+              Area that are outside the clipped region are hidden.
+              <a class="moreInfoTricks" href="https://www.w3schools.com/css/css_margin.asp" target="_blank">
+                Check here for more details about "CSS margins".</a>          
+            </p> 
+            <img class="imgcssConcepts" src="img/programming.jpg" alt="">
+            
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Initial Value</h4>
+                    <mark class="highlight">None</mark>
+                    <h4>Applies to</h4>
+                    <p>All elements;</p>
+                    <h4>Inherited</h4>
+                    <p>Yes</p>        
+                    <h4>Commonly used method,simple alignment</h4>
+                    <p>
+                        margin:auto;
+                    </p>
+                </div> 
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <pre>
+                    <code class="language-html">  
+                        &lt;div class="tricks3"&gt;
+                            &lt;div class="vertical__Center line1"&gt;
+                                line Height, only single-line
+                            &lt;/div&gt;
+                            &lt;div class="vertical__Center line2"&gt;
+                                line Height, more than two-line            
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        html, body {
+                            font-family: 'Raleway', sans-serif;
+                            width:100%;
+                            height:100%; 
+                        }                        
+                        * {
+                            box-sizing:border-box;
+                        } 
+                        /*B careful with padding while using line-height for
+                         verical centering, it shows weired behavior*/
+                        .vertical__Center {    
+                            height:200px;
+                            width:200px;
+                            line-height: 200px;
+                            margin:2rem;
+                            border-left:8px solid #f3b05a;
+                            padding-left:1rem;
+                        }                        
+                        .line1 {    
+                            background-color:#a3586d;
+                        }                        
+                        .line2 {
+                            background-color: #5c4a72;
+                        }                        
+                        .tricks3 {
+                            overflow:hidden;
+                        }   
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/YzWBzg">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <span class="material-icons">verified</span>            
+                <a href="https://css-tricks.com/" target="_blank">
+                    Check most popular website for css.
+                </a>            
+                 
+                <a href="https://www.freecodecamp.org/">
+                    <span class="material-icons">dashboard</span>
+                    Popular website for responsive web Design, Javascript Algorithms and Data Structures,
+                    Front End Libraries, Data Visualization, APIs and any more.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+
+        <!--tricks, certical centering-->
+        <div class="lineHeight cssConcepts">
+            <h3 class="headingTopic">Line-height</h3>        
+            <p class="cssConcepts__introduction">                
+                while making navigation bar, that time we need to vertically center the text. But one point to remember in css  is that we need to reduce the code lines, which means use less code line but get the same output. So with the single syntext, <i>line-height:height,</i> vertical is centered.Mention line-height should be same as height of the container, then
+                it will be centered.Be careful with <span class="importantHighlight">padding</span> while using line-height.mostly this tricks is use for <span class="importantHighlight">single line sentence.</span> Using line-height to center vertically for more than <span class="importantHighlight">single sentence line</span> will show really weired behavior. 
+                <a class="moreInfoTricks" href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height" target="_blank">
+                  Check here for bonus.</a>
+            </p>
+            <img class="imgcssConcepts" src="img/music.svg" alt="">
+
+            <div class="cssConcepts__details">
+                <h3>formal definition</h3>
+                <div>
+                    <h4>Default Value</h4>
+                    <mark class="highlight">normal</mark>
+                    <h4>Applies to</h4>
+                    <p>All elements; it also applies to <mark class="highlight">::first-letter</mark> and   <mark class="highlight">::first-line</mark> elements and all graphics element and all graphics elements.</p>
+                    <h4>Inherited</h4>
+                    <p>Yes</p>        
+                    <h4>Animation type</h4>
+                    <p>
+                        Yes, either number or length.
+                    </p>
+                </div> 
+            </div>                                  
+            <div class="cssConcepts__htmlCssCode">
+                <h1 class="htmlHeading">html code</h1> 
+                <pre>
+                    <code class="language-html">  
+                        &lt;div class="tricks3"&gt;
+                            &lt;div class="vertical__Center line1"&gt;
+                                line Height, only single-line
+                            &lt;/div&gt;
+                            &lt;div class="vertical__Center line2"&gt;
+                                line Height, more than two-line            
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+
+                <h1 class="cssHeading">CSS code</h1>
+                <pre>
+                    <code class="language-css">  
+                        html, body {
+                            font-family: 'Raleway', sans-serif;
+                            width:100%;
+                            height:100%;                             
+                        }
+                        *{
+                          box-sizing:border-box;
+                        }
+                        .vertical__Center {    
+                            height:200px;
+                            width:200px;
+                            line-height: 200px;
+                            margin:2rem;
+                            border-left:8px solid #f3b05a;
+                            padding-left:1rem;
+                        }
+                        .line1 {  
+                            background-color:#a3586d;
+                        }
+                        .line2 {
+                            background-color: #5c4a72;
+                        }
+                        .tricks3 {
+                            overflow:hidden;
+                        }
+                    </code>
+                </pre>                               
+            </div>  
+            <a class="cssConcepts__example" style="display: block; margin-top: 3vh;" 
+                target="_blank" href="https://codepen.io/amberbdr789/pen/yLJGpQQ">
+                <span class="material-icons">fact_check</span>
+                click here to see the output
+            </a> 
+            <div class="cssConcepts__browserSuport">
+                <a href="https://caniuse.com/?search=line-height" target="_blank">
+                    <span class="material-icons">verified</span> 
+                    Note: check browser supports before using line-height.
+                </a>            
+                 
+                <a href="https://type-scale.com/">
+                    <span class="material-icons">dashboard</span>
+                    check here for different line-height generator.
+                </a>       
+            </div>
+        </div>
+        <hr class="cssTricks__horizontal">
+    </article>    
+    
+    <div class="profileLinks">
+        <div class="profileLinks__background">
+        </div>
+        <div class="profilePhoto">
+            <img class="profilePhoto__image" src="img/profile.jpg" alt="">           
+        </div>       
+        <table class="hobbyParents">
+            <tr>
+                <td>
+                    <span class="material-icons">
+                    model_training
+                    </span>
+                </td>
+                <td>
+                    Amber Bdr. Kharka
+                </td>
+            </tr>
+            <tr>  
+                <td class="iconProfile">
+                    <span class="material-icons">extension</span>
+                </td>
+                <td>                   
+                    Hobby|Listening Music, Sleeping and 
+                    doing nothing.
+                </td>
+            </tr>
+            <tr>    
+                <td class="iconProfile">
+                    <span class="material-icons">online_prediction</span>
+                </td>           
+                <td>                   
+                    mission|Be Creative, smart, client satisfaction, 
+                    efficient use of Tools.
+                </td>
+            </tr>
+            <tr>
+                <td class="iconProfile">
+                    <span class="material-icons">receipt</span>
+                </td> 
+                <td>                
+                    Presently|Website developer.
+                </td>
+            </tr>
+            <tr>
+                <td class="iconProfile">
+                    <span class="material-icons">engineering</span>
+                </td> 
+                <td>
+                    </span>Future plan|Full stack developer.
+                </td>
+            </tr>  
+            <tr>
+                <td class="iconProfile">
+                    <span class="material-icons">cast_for_education</span>
+                </td> 
+                <td>                  
+                    B.tech/Electrical : National Institute of Technology, India.
+                </td>
+            </tr> 
+        </table>   
+        <div class="profileLinksSocial">   
+            <button class="pingMe">Ping me</button>               
+            <a class="myDetailSocial firstChild" href="#">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>   
+            <a class="myDetailSocial" href="#">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a class="myDetailSocial" href="#">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a class="myDetailSocial" href="#">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a class="myDetailSocial" href="#">
+                <i class="fa fa-quora" aria-hidden="true"></i>
+            </a>       
+        </div>    
+    </div>
+
+    <footer class="footerMainPage">  
+        <div class="footerIconsSocial">
+            <a href="https://twitter.com/KharkaAmber?s=09" target="blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>   
+            <a href="https://www.facebook.com/amber.bdr.75" target="blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/amber-bdr-9a9784131" target="blank">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="#" target="blank">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.quora.com/profile/Amber-Bdr?ch=10&share=55f842e9&srid=uY6K4" target="blank">
+                <i class="fa fa-quora" aria-hidden="true"></i>
+            </a>  
+        </div>
+        <div class="last-footer">Copyright &#169 2020 website name <span class="d">D</span> All rights reserved. 
+    </footer>  
+
+    
+    <script src="js/prism.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop(),
+                dh = $(document).height(),
+                wh = $(window).height();
+                value = (scroll / (dh-wh)) * 100;
+            $ ('#progress').css('width', value + '%');            
+        })        
+    </script>  
+
+</body>
+</html>
+
+<!--
+
+//css google fonts, done
+https://codepen.io/amberbdr789/pen/PozVqNE
+
+// CSS blend mode, done
+https://codepen.io/amberbdr789/pen/ExyraGB
+
+//Css animations, done
+https://codepen.io/amberbdr789/pen/XWKOJoQ
+
+//css text gradients Done
+https://codepen.io/amberbdr789/pen/LYZqENv
+
+//page section Navigation, done
+https://codepen.io/amberbdr789/pen/YzWBPKo
+
+//Making first letter big, done
+https://codepen.io/amberbdr789/pen/VwjgwJN
+
+//Margin:auto, done.
+https://codepen.io/amberbdr789/pen/YzWBzgM
+
+//vertical text centering
+https://codepen.io/amberbdr789/pen/NWroWor
+
+//inline, block, inline-block
+https://codepen.io/amberbdr789/pen/oNLmNaQ
+
+//Clip-path, done
+https://codepen.io/amberbdr789/pen/KKMJKeN
+
+-->
+
+
+

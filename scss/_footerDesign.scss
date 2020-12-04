@@ -1,0 +1,44 @@
+.footercssTricks {
+   display: flex;
+   justify-content:center;
+   flex-direction: column;
+   text-align:center;
+   @include footerIcon;
+   color:$colorBright61;
+}
+
+/****mainPage.html footer*****/
+.mainPage {
+    transform:translateY(6vh);
+    background-color:$colorBright7;    
+}
+
+@media screen and (min-width:600px) {
+    .footercssTricks {       
+        
+        .footerIconsSocial {
+            a {
+                width:50px;
+                height:50px;
+            }
+        }
+    } 
+}
+
+/*css tricks footer design*/
+.footerMainPage {
+    display:flex;
+    flex-direction:column;    
+    @include footerIcon;
+    padding:1rem;   
+
+    .last-footer {
+        text-align:center;
+    }
+}
+
+@media sreen and (min-width:700px) {
+    .footerMainPage {
+        flex-direction:row;
+    }
+}

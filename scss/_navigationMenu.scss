@@ -1,0 +1,284 @@
+
+nav {   
+    padding:1rem;
+   position:fixed;
+   z-index:6;
+   top:0;
+   left:0;
+   height:10vh;
+   background:$colorBright6;  
+
+   .logo {       
+       position: fixed;
+       top:0;
+       left:0;
+       width:auto;
+       height:5%;  
+       background:$colorBright6;  
+       z-index:3;  
+   }
+
+   .hemburger {       
+       position:fixed;
+       top:0;
+       right:0;
+       height: 10vh;
+       background:$colorBright6;
+       width:100vw; 
+       padding:.5rem .5rem 0 .5rem;  
+
+
+       .first {           
+           width:35px;
+           height:5px;
+           background-color:$colorBright8;
+           margin-left:auto;
+           margin-right:.5rem;
+       }
+
+       .second {
+           @extend .first;
+           margin-top:.3rem;
+       }
+       .third {
+        @extend .second;
+        width:25px;
+       }       
+   }
+
+   #toggle,.navigation{
+       display:none;
+   }
+
+    .navigation {
+        position:fixed;
+        top:10vh;
+        right:0;
+        z-index:8;
+        background-color: $colorBright6;
+        color:$colorBright8;
+        height:40vh;
+        width:50vw;           
+
+           a { 
+            padding:1rem;
+            color:$colorBright8;
+            cursor:pointer;
+            text-decoration-color:$colorBright8;
+
+            &:hover {
+                display:inline-block;
+                background-color:$colorBright4;
+            }
+           }
+           
+       }
+       
+       #toggle:checked ~ .navigation {
+           display:flex;
+           flex-direction:column;
+            transition:height 3s;
+       }
+
+ }
+
+.coverPhoto {
+    position: relative;
+    top:10vh;    
+    height:65vh;
+    width:100%;      
+    color:$colorBright8; 
+    z-index:4;  
+    padding:9vh 5vw;   
+    margin-bottom:0;
+    
+    .CoverPagewebDev {
+        font-size:$font-size3;
+        font-weight:600;
+        color:$colorBright61;  
+        position:relative;
+
+        &__horizontal {
+            height:4px
+        }        
+
+        &__circleAnimation {
+            position:absolute;
+            top:0;
+            left:0;
+            height:15px;
+            width:15px;
+            border-radius:50%;
+            background-color:$colorBright1; 
+            font-size:$font-size4;    
+            font-weight:600;      
+        }  
+    }
+
+    &::after {
+        content:'';
+        top:0;
+        left:0;
+        position:absolute;
+        background-color:rgba($colorBright5, .5); 
+        width:100%;
+        height:100%;  
+        z-index:-2;       
+    }  
+
+    &::before {
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        background: url('../img/CoverPhoto2.jpg');
+        background-size:cover;       
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        z-index:-4;             
+    } 
+
+    .coverPhoto__sub {
+        padding:4vw;
+        display:flex;
+        flex-direction:row;   
+    }
+    
+    .tarmepCover {
+        border-left:4px solid $colorBright1;
+        width:70%;
+        margin:4vw;
+        font-family: 'Rubik', sans-serif;
+        line-height:2;
+        padding:1vw;
+        font-size:$font-size1;
+        max-width:500px;
+        color:$colorBright61;      
+        border-radius:50%;  
+    }
+
+    .wordSlideH {
+     font-family: 'Montserrat', sans-serif;
+     font-size:$font-size3;
+     font-weight:600;
+     color:$colorBright61;
+     margin:0 4vw;
+     border-left:4px solid $colorBright61;
+     border-right:4px solid $colorBright61;
+     height:15vh;
+     width:30vw;
+     padding:3vw;
+     border-radius:50%;
+     @include flexBox;
+     align-items:center;
+    }          
+
+    .rightAngle {
+        transform:rotateZ(90deg);
+        font-size:$font-size2;
+        border-radius: 50%;
+        height:40px;
+        background-color:$colorBright11;
+        width:40px;
+        box-shadow:3px 3px 4px $colorBright7;
+        z-index:6;
+        color:$colorBright10;
+        text-align:center;
+        position:absolute;
+        top:80%;
+        left:50%;    
+        animation-name:upDown;  
+        animation-iteration-count:infinite;        
+        animation-duration:1s;  
+        @include flexBox;
+        align-items: center;
+  
+
+        @keyframes upDown {
+            10% {
+                top:76%;
+            }
+            25% {
+                top:80%;
+            }
+            40% {
+                top:78%;
+            }
+            50% {
+                top:80%;
+            }
+            
+        }
+        a {
+            text-decoration:none;
+        }
+        &__downArrow {
+            font-size:$font-size4;
+            font-weight:600;
+        }
+    }
+
+}
+
+.heading1 {
+    margin-top:15vh;
+}
+
+@media screen and (min-width:600px) {
+    .coverPhoto {
+        .tarmepCover {
+            margin-top:0;
+        }
+    }
+}
+
+@media screen and ( min-width:778px) {
+    nav {        
+        display:flex;
+        align-items:center;
+
+       .hemburger {
+           display:none;
+       } 
+
+       .navigation {
+           .logo {
+               height:6vh;
+               width:auto;
+              margin-top:2vh;
+           }
+           height:10vh;
+           width:100vw;
+           top:0;
+           display:flex;
+           justify-content:space-around;
+           align-items:center;
+           .material-icons {
+               display:none;
+           }
+       }    
+    } 
+
+    .coverPhoto {
+        height:75vh;
+        &::before {
+         background: url('../img/design1Layout.svg');
+         background-size:cover;  
+         background-attachment:fixed;
+        }
+        
+        &::after {         
+            background-color:rgba($colorBright6, .4);
+        } 
+
+        &__sub{
+            display: none;
+        }     
+    }
+}
+
+ .coverPhoto {
+    height:80vh
+}

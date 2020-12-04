@@ -1,0 +1,125 @@
+.fourArticles {    
+   display: grid; 
+   grid-gap:.5rem;
+   grid-template-columns:90%;
+   grid-template-rows:25% 25% 25% 25%;
+   height:160vh; 
+   justify-content: center;  
+ 
+
+   &__heading {
+    margin:0;
+    padding:1rem 0;    
+    text-align: center;
+    color: $colorBright10;
+    font-family: 'Rubik', sans-serif;
+    font-size:$font-size2;
+    position:relative;
+   }
+    
+   [class|=material]{
+       font-size:$font-size2;
+       color:white;
+       z-index:4;
+       font-weight: $font-weight1;
+       opacity:.8;
+   }
+
+   .colors { 
+        position: relative;       
+        box-shadow: 4px 4px 10px  $colorBright7;
+   }
+
+   .colors::after {         
+      background-color:$colorBright6;                     
+      z-index:3;
+      opacity:.6;
+      @include positionAbsolute;
+      
+    }
+
+
+   
+   //start of fourArticles__technologyTalks
+   &__technologyTalks {    
+       position: relative;  
+       width:100%;
+       @include flexBox;
+
+        &::before{    
+            @include positionAbsolute;              
+            background-image: url('../img/technology1.jpg');  
+            background-size:cover; 
+             
+            }            
+    }
+    //end of technologyTalks
+
+    //start of Web development news
+    &__WebNews {    
+        position: relative;  
+       width:100%;
+       @include flexBox;
+
+        &::before{
+            @include positionAbsolute;
+            background-image: url('../img/typewriter.jpg'); 
+            background-size:cover;          
+            }        
+    }
+    //end of Web development news
+
+
+    //start of Random Talks
+    &__randomNews {    
+        position: relative;  
+       width:100%;
+       @include flexBox;    
+
+        &::before{ 
+            @include positionAbsolute;
+            background-image: url('../img/groupDiscussion.jpg');  
+            background-size:cover;
+            }
+          
+    }
+    //end of Random Talks
+    
+    
+    //start of  My Portfolio
+    &__myPortfolio {  
+        position: relative;  
+       width:100%;
+       @include flexBox;
+
+        &::before{ 
+            @include positionAbsolute;               
+            background-image: url('../img/writingss.jpg');  
+            background-size:cover;       
+            }          
+    }
+    //end of My Portfolio    
+ }
+
+ @media screen and (min-width:700px) {
+    .fourArticles {   
+        height:80vh; 
+        display: grid; 
+        grid-template-columns:50% 50%;
+        grid-template-rows:auto auto;
+
+    }
+ }
+
+ @media screen and (min-width:800px) {
+    .fourArticles {   
+        height:40vh; 
+        display: grid; 
+        grid-template-columns:25% 25% 25% 25%;
+        grid-template-rows:auto;
+    }
+ }
+ 
+
+
+ 

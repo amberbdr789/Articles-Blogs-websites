@@ -1,0 +1,110 @@
+
+
+.templates {   
+    overflow:hidden;
+    width:100%;
+    display:grid;    
+    grid-template-columns:90%;
+    grid-template-rows:repeat(6,65vh);
+    justify-content:center;  
+    grid-gap:1rem;  
+    
+    div {
+        font-size:$font-size1;
+    }
+
+    .One {  
+        margin:1rem;   
+        box-shadow:$box-shadow;  
+        @include positionAbsolute2; 
+        @include iconsHeading; 
+
+        img {            
+            @include imageSize;
+        }
+    }
+    
+    .two { 
+
+        img {
+            @include imageSize;
+        }
+        margin:.5rem;
+        box-shadow:$box-shadow;
+        @include positionAbsolute2;
+        @include iconsHeading; 
+    }
+
+    .three {
+
+        img {
+            @include imageSize;
+        }
+        margin:.5rem;
+        box-shadow:$box-shadow;
+        @include positionAbsolute2;  
+        @include iconsHeading; 
+    }
+
+    .four {
+        img {
+            @include imageSize;
+        }
+        margin:.5rem;
+        box-shadow:$box-shadow;
+        @include positionAbsolute2; 
+        @include iconsHeading; 
+    }
+
+    .five {
+        img {
+            @include imageSize;
+        }
+        margin:.5rem;
+        box-shadow:$box-shadow;
+        @include positionAbsolute2; 
+        @include iconsHeading; 
+    }
+
+    .six {
+        img {
+            @include imageSize;
+        }
+        margin:.5rem;
+        box-shadow:$box-shadow;
+        @include positionAbsolute2;
+        @include iconsHeading; 
+    }
+
+}
+
+
+@media screen and (min-width:400px) {
+    .templates {
+        grid-template-columns:48% 48%;        
+        grid-template-rows:repeat(3,65vh);     
+
+    }
+}
+
+@media screen and (min-width:750px) {
+    .templates {
+        grid-template-columns:32% 32% 32%;        
+        grid-template-rows:repeat(2,65vh);   
+
+    }
+}
+
+
+@media screen and (min-width:1000px) {
+    .templates {
+        
+        margin:auto;
+        max-width:1150px;
+        grid-template-columns:32% 32% 32%;        
+        grid-template-rows:repeat(2,70vh);    
+
+    }
+}
+
+

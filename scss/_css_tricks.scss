@@ -1,0 +1,384 @@
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+//headerCsssTricks starts
+.headerCsssTricks {   
+    &__heading {
+        margin-left:1rem;
+        .button { 
+            margin:.5rem;
+            display: inline-block;
+            background:$colorBright6;
+            color:$colorBright2;
+            padding:.5rem;
+            border-radius:.5rem;
+        }
+    }
+
+    .homePage {
+        text-decoration:none;
+        margin-left:1rem;
+        cursor: pointer;
+    }
+    &__imgHeader {
+        width:100%;
+        height:auto;
+    }
+
+    &__profile {  
+        margin-left: 1rem;
+        .imgBoxShadow {
+            margin:2rem 0 2rem 2rem;
+            box-shadow: 
+             0 0px 10px 20px #fff,
+             0 20px 20px 0px #aaa;
+            padding:.4rem;
+            width:50%;
+            height:auto; 
+
+            .imgProfile {
+                width:70%;
+                height:auto;               
+                transform:rotate(-20deg);           
+                border:1px solid $colorBright6;
+                margin:0 2vw 0;
+            }
+        } 
+
+        .profile__topicDate {
+            margin-top:1rem;
+
+            .metaTags {
+                width:60%;
+                text-align:justify;
+                text-justify:inter-word;
+            }
+        }        
+    }
+}
+
+@media screen and (min-width:600px) {
+    .headerCsssTricks__profile {
+        display:grid;
+        grid-template-areas:'a a a b  b b b b b b b';
+
+        .imgBoxShadow {
+            grid-area:a;
+
+            .imgProfile {
+                width:100%;
+            }
+        }
+        .profile__topicDate {
+            grid-area:b;
+            text-align:left;
+        }
+
+    }
+}
+
+//headerCsssTricks ends
+.cssTricks {
+    overflow:hidden;
+    width:100%;
+    height: auto;
+    padding:1rem; 
+
+      .headingTopic {
+        font-size:$font-size2;
+        margin:0;
+        color:$colorBright3;
+        }
+   
+        p {        
+            font-family: 'Rubik', sans-serif;    
+            //color:$colorBright10;         
+        }
+
+        .highlight {
+            background-color:$colorBright11;
+        }
+
+        a {      
+            color:$colorBright6;
+            cursor:pointer;   
+
+            &:hover {
+                opacity: .9;
+            }
+        }
+  
+        h3,h4, h1 { 
+        font-family: 'Lato', sans-serif;
+        }  
+    
+        .material-icons {        
+            color:$colorBright6;       
+            margin-right:.5rem;                    
+        }    
+
+         .browserSuport {
+            margin-top:2rem; 
+            
+            &__example {
+                margin-top:5vmin;          
+            }       
+        }
+
+        &__example {
+            margin:2vh 0;
+        }
+
+        &__browserSuport {
+            margin:4vh 0;
+        }
+
+        &__horizontal{
+            background-color:$colorBright6;
+            height:4px;
+            margin:1rem 0;
+        }
+
+        .importantHighlight {
+            color:$colorBright1;        
+        }
+
+
+        .syntextHighlight {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .randomHighlight {
+            color:$colorBright1;        
+        }
+
+        #imgGradients {
+            width:100%;
+            height:40vh;
+        }
+        .gradients {
+            height:30%;
+            width:100%;
+            background-repeat:no-repeat;       
+        }
+        .firstTop {
+            background:linear-gradient(45deg, #5f2c82, #49a09d);        
+        }
+        .secondMiddle {
+            background:linear-gradient(45deg, #c04848, #480048);
+        
+        }
+        .ThirdEnd {
+            background:linear-gradient(45deg, #fc354c, #0abfbc);
+        }
+}
+    
+
+.cssTricks {
+    .cssConcepts {
+        width:100%;
+
+        .htmlHeading, .cssHeading {
+            color:$colorBright2;
+            font-size:$font-size2;
+        }
+
+        &__details {
+        background-color: $colorBright12;
+        border-left:4px solid $colorBright6;
+        
+        padding:.6rem;   
+            p {
+                color:$colorBright7;
+                padding-left:1rem;
+            }
+        }
+
+        &__introduction {
+            line-height:1.5;          
+        }
+
+        .imgcssConcepts {
+            width:100%;
+            height:auto;
+            margin:0;              
+            font-family: 'MuseoModerno', cursive;  
+        } 
+        &__details {
+            margin-top:10vh;
+        }
+        &__htmlCssCode {            
+            h1 {
+                margin-top: 10vh;
+            }
+        }
+        .moreInfoTricks {
+            text-decoration:none;
+        }      
+    }
+    
+    .google__fonts {
+        #googleFonts {
+            width:100%;
+            margin:0;
+            
+            .imgGoogleSub {
+                width:100%;
+                height:auto;
+                margin:0;
+            }
+        }
+    }
+     
+    &::after {
+        display:table;    
+        clear:right;
+    }  
+    
+}
+
+
+
+@media screen and (min-width:700px){
+    .cssTricks {
+        margin:auto;
+        width:100%;
+        max-width:1200px;       
+        .cssConcepts {
+            display:grid;
+            grid-gap:1vw;
+            grid-template-areas: 'a a a a'
+                                 'b b c c'
+                                 'b b d d'
+                                 'e e e e'
+                                 'f f g g';
+            h3 {
+                grid-area:a;
+            }
+
+            &__introduction {
+                text-align:justify;
+                text-justify: inter-word;
+                grid-area:c;               
+            }   
+
+            &__details {
+                grid-area:b;
+                margin-top:3vh;
+            }   
+            .imgcssConcepts {
+                grid-area:d;
+            }         
+
+            &__htmlCssCode {
+                grid-area:e;
+            }
+            &__browserSuport {
+                grid-area:f;
+            }
+            &__example {
+                grid-area:g;
+            }
+        }
+    }
+}
+
+.profileLinks {
+    display:none;
+}
+
+@media screen and (min-width:1100px) {
+    .cssTricks, .headerCsssTricks {
+        float:left;
+        width:70%;
+    } 
+
+    .cssConcepts {
+        grid-gap:0;
+    }
+
+    .profileLinks {  
+        font-family: 'Rubik', sans-serif;    
+        display:block;
+        position:fixed;
+        top:0;
+        right:0;       
+        width:30%;
+        height:100vh;  
+        color:$colorBright14;    
+     
+   
+       
+        .hobbyParents {
+            margin:.5rem 0 0 3vw;
+            tr {
+                height:8vh;
+            }
+
+            .material-icons {
+                margin-right:1vw;
+            }
+        }
+        
+
+        &__background {            
+            height:10vh;
+            width:100%;
+            background:rgba(0,0,0,.4);
+        }
+
+        .profilePhoto {
+            
+            margin-left:3vw;        
+            &__image {
+                width:30%;
+                height:auto;
+                border-radius:50%;               
+                position:relative;
+                bottom:4vh;
+                left:0;                
+            }
+        }
+
+        .profileLinksSocial {
+            .pingMe {
+                display: block;
+                width: 80%;
+                margin:2vh 2vw 2vw 3vw;
+                padding:.8rem;
+            }
+
+            a {
+                text-decoration: none;
+                color:$colorBright14;
+                cursor:pointer;
+            }
+            .myDetailSocial {                
+                margin:2vh .5rem;
+            }
+            .firstChild { 
+                margin-left:3vw;
+            }
+        }
+    }
+
+ 
+}
+
+.footerMainPage {
+    clear:left;
+}
+
+
+
+
+
+
+
+
+
